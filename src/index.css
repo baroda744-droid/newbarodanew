@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Inter', 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+}
+
+/* Custom scrollbar hiding for horizontal tabs and carousels */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(255, 107, 0, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(255, 107, 0, 0.7);
+  }
+}
+
+.glow-orange {
+  animation: pulseGlow 2.5s infinite ease-in-out;
+}
+
+@keyframes scanLaser {
+  0% {
+    top: 4%;
+    opacity: 0.85;
+  }
+  50% {
+    top: 93%;
+    opacity: 1;
+  }
+  100% {
+    top: 4%;
+    opacity: 0.85;
+  }
+}
+
+.animate-scan-laser {
+  animation: scanLaser 2.4s infinite ease-in-out;
+}
+
+@keyframes errorShake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  12% {
+    transform: translateX(-10px) rotate(-1.5deg);
+  }
+  25% {
+    transform: translateX(9px) rotate(1.5deg);
+  }
+  38% {
+    transform: translateX(-7px) rotate(-1deg);
+  }
+  52% {
+    transform: translateX(6px) rotate(0.8deg);
+  }
+  68% {
+    transform: translateX(-4px) rotate(-0.5deg);
+  }
+  82% {
+    transform: translateX(2px) rotate(0.2deg);
+  }
+}
+
+.animate-error-shake {
+  animation: errorShake 0.65s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+@keyframes iconPopShake {
+  0% {
+    transform: scale(0.4);
+    opacity: 0;
+  }
+  35% {
+    transform: scale(1.18) translateX(-10px) rotate(-6deg);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.08) translateX(8px) rotate(5deg);
+  }
+  65% {
+    transform: scale(0.96) translateX(-5px) rotate(-3deg);
+  }
+  80% {
+    transform: scale(1.02) translateX(3px) rotate(1.5deg);
+  }
+  92% {
+    transform: scale(0.99) translateX(-1px) rotate(-0.5deg);
+  }
+  100% {
+    transform: scale(1) translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.animate-icon-pop-shake {
+  animation: iconPopShake 0.75s cubic-bezier(0.25, 1, 0.5, 1) both;
+}
+
+@keyframes splashSquareScale {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.06);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes splashFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-splash-square {
+  animation: splashSquareScale 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-splash-logo {
+  animation: splashFadeIn 0.5s ease-out 0.25s both;
+}
+
+.animate-splash-text {
+  animation: splashFadeIn 0.5s ease-out 0.55s both;
+}
+
+.animate-splash-subtext {
+  animation: splashFadeIn 0.5s ease-out 0.85s both;
+}
